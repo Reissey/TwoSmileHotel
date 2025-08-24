@@ -1,0 +1,493 @@
+/*body{
+    background-color: white;
+    color:black;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+nav{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    margin-right: 100px;
+}
+
+#reth {
+    visibility:hidden;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+#reth > div {
+  width: 300px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+#reth img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: none; 
+
+#reth img.active {
+  display: block; 
+}
+
+#reth span {
+  display: block;
+  margin-top: 8px;
+  font-size: 16px;
+  text-align: center;
+}
+
+li{
+    padding: 20px;
+    list-style: none;
+      
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: gold;
+}
+#form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+#sawe{
+  background:url('./booking2.JPG');
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+#take{
+    position: relative;
+    bottom: 17px;    
+    font-family: "Inter",sans-serif;
+}
+#setDate{
+    position: relative;
+    bottom: 4px;
+    font-family: "Inter",sans-serif;
+}
+hr{
+    width: 70%;
+    border:1px solid burlywood;
+}
+#pol{
+    margin-top: 100px;
+}
+#sey{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    margin-left: 600px;
+    justify-content: center;
+    text-decoration: underline;
+}
+#pp{
+    font-family: 'Inter',sans-serif;
+}
+#sec{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 20px;
+}
+#chin{
+    margin-left: 120px;
+}
+#chon{
+    margin-left: 120px;
+}
+#fir{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+#btn{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 100px;
+    margin-left: 550px;
+    color: black;
+    background-color:snow;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    cursor: pointer;
+    font-family:"Figtree",sans-serif;
+    font-size: 13px;
+    border: 1px solid green;
+    width: fit-content;
+    position: relative;
+    bottom: 130px;
+}
+#see{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 100px;
+    margin-left: 550px;
+    color: black;
+    background-color:snow;
+    border-radius: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: pointer;
+    font-family:"Figtree",sans-serif;
+    font-size: 13px;
+    border: 1px solid burlywood;
+    width: fit-content;
+}
+#big{
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#pof{
+    font-family: "Inter",sans-serif;
+    margin-right: 200px;
+    font-weight: lighter;
+    position: relative;
+    bottom: 100px;
+}
+#btn:hover{
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 60px;
+    padding-right: 60px;
+    transition: all;
+    transition-duration: 1s;
+    transition-timing-function: 1s;
+}
+#btn:active{
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 64px;
+    padding-right: 64px;
+    transition: all;
+    transition-duration: 0.3s;
+    transition-timing-function: 1s;
+}
+
+#check_in{
+    margin-right: 70px;
+    padding: 10px;
+    padding-right: 60px;
+}
+#check_out{
+    margin-right: 85px;
+    padding: 10px;
+    padding-right: 60px;
+}
+#phnn{
+    margin-left: 30px;
+}
+label{
+    padding: 10px;
+}
+#head{
+    position: absolute;
+    top:-2px;
+    margin-left: 35%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 35px;
+}
+
+#loadingSpinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    display: none;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3; 
+    border-top: 4px solid #3498db; 
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+p{
+    text-align: center;
+}
+#emi{
+    margin-left: 90px;
+}
+input{
+color: black;
+font-family: "Figtree",sans-serif;
+padding: 10px;
+border-radius: 5px;
+margin-left: 10px;
+font-size: 15px;
+border: 1px solid black;
+}
+span{
+    font-weight: lighter;
+    font-family: "Inter",sans-serif;
+    vertical-align: auto;
+}
+select{
+    font-family: "Figtree",sans-serif;
+    font-weight: 100;
+    padding: 10px;
+    padding-right: 10px;
+}
+#ree{
+        margin-left: 40px;
+}
+aside{
+    margin-left: 20px;
+    font-size: 10px;
+    font-family: "Figtree",sans-serif;
+    color: red;
+}*/
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Figtree', sans-serif;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  gap: 30px;
+  padding-right: 50px;
+}
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: gold;
+}
+
+/* Header */
+#sawe {
+  background: url('./booking2.JPG') no-repeat center/cover;
+  height: 180px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+#head {
+  font-size: 36px;
+  color: white;
+  text-align: center;
+}
+#head aside {
+  font-size: 14px;
+  color: lightcoral;
+  margin-top: 5px;
+}
+
+/* Description */
+#pp {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 700px;
+  font-size: 18px;
+}
+
+/* Form Wrapper */
+#pol {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Booking Form */
+form {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+#sey {
+  display: block;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+#form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+form label {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+form input, form select {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 15px;
+}
+form input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Buttons */
+#btn, #see {
+  display: block;
+  margin: 40px auto 20px auto;
+  padding: 12px 30px;
+  background-color: snow;
+  border-radius: 5px;
+  border: 1px solid green;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+#btn:hover, #see:hover {
+  background-color: #e3ffe3;
+  transform: scale(1.05);
+}
+#btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Extra Note */
+#pof {
+  margin-top: 20px;
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Did You Know Title */
+#big {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Room Cards */
+#reth {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 30px;
+}
+#reth > div {
+  width: 280px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+}
+#reth img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+#reth span {
+  padding: 10px;
+  display: block;
+}
+
+/* Spinner */
+#loadingSpinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  display: none;
+}
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #eee;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  #form {
+    flex-direction: column;
+  }
+
+  form label {
+    flex: 1 1 100%;
+  }
+
+  #btn, #see {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  #sey {
+    margin-left: 0;
+    text-align: center;
+  }
+}

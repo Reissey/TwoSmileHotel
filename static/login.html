@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./login.css"/>
+</head>
+<body>
+
+  <h2>2 Smile Hotel</h2>
+  <aside><em>Exclusive access to a unique experience</em></aside>
+
+  <p>Please ensure to have an account with us before coming to login.
+     Click <a href="./Register.html" id="here">here</a> to create an account with us.</p>
+
+  <form method="post" id="forr">
+    <div id="flex">
+      <label>
+        <span>Name:</span>
+        <input type="text" placeholder="Enter name" id="name" name="name" required>
+      </label>
+      <label>
+        <span>Email:</span>
+        <input type="email" placeholder="Enter email" id="email" name="email" required>
+      </label>
+      <label>
+        <span>Password:</span>
+        <input type="password" placeholder="Enter password" id="pass" name="password">
+      </label>
+      <button type="submit" id="submit">Submit</button>    
+    </div>
+  </form>
+
+  <section id="foot">
+    <p id="change">Follow us on social media through our social media handles</p>
+    <ul id="del">
+      <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+    </ul>
+  </section>
+
+  <p id="passMsg"></p>
+  <p>Click <a href="./passReset.html">here</a> to reset password</p>
+
+  <div>
+    <p class="loading" id="loading">2 Smile Hotel...</p>
+  </div>
+</body>
+      <script>
+        const don=document.getElementById('forr');
+        don.addEventListener('submit',async (e)=>{
+            e.preventDefault();
+            const load=document.getElementById('loading');
+            load.style.display='block'
+            setTimeout(()=>{
+            load.style.display='none'
+            },10000);
+            await dar()
+        })
+        const dar=async()=>{
+            const pass=document.getElementById('pass').value;
+            const email=document.getElementById('email').value;
+            localStorage.setItem(email,'ono');
+            const response=await fetch('/login',{
+                method:'post',
+                headers:{'Content-Type':'application/json'},
+                body:JSON.stringify({
+                    password:pass,
+                    email:email
+                })
+            });
+            const data=await response.json();
+            if(data.incorrectPasswordMsg){
+                const passMsg=document.getElementById('passMsg');
+                passMsg.textContent=data.incorrectPasswordMsg
+                setInterval(() => {
+                    location.reload()
+                }, 3000);
+            }else if(data.sMsg ){
+                    window.location.href=  data.sRed;
+                
+            }else if(data.msg){
+                const passMsg=document.getElementById('passMsg');
+                passMsg.textContent=data.msg;
+            }else{
+                const passMsg=document.getElementById('passMsg');
+                passMsg.textContent='An unexpected error occurred';
+            }
+        }
+      </script>
+</body>
+</html>

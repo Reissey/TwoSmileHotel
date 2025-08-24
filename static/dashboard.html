@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./dashboard.css">
+</head>
+<body>
+    <h2 id="hotel">Two Smile Hotel<br><em><aside>Exclusive access to a unique experience</aside></em></h2><hr>
+    <p id="welcome">Welcome, <span id="nameTo"></span> to your dashboard.<br>
+    <span id="werw">We are excited to have you here.<span id="gud"></span> <span id="grr"></span></span>
+    </p>
+    <section id="sen">
+        
+            <p id="enter">
+               You came in:<span id="entry_date"></span>
+            </p>
+            <p id="expires">Your accommodation in Two Smile expires on:<span id="exit_date"> <span id="dub">+ 1Hour and 30Mins</span> (Courtesy of the website)</span> 
+            </p>    
+        
+            <p id="exit"></p>
+            <strong>
+                <p id="time"></p>
+            </strong>
+                <p id="advert"><span id="her">New Here ?</span> <br><span id="brt">Click below to use our map services to locate Two Smile Hotel.</span></p>
+    <button id="click">Map Service</button>
+    </section>
+    <section id="rex"></section>
+    <div id="receiptDisplay">
+    </div>
+    <span id="rea"></span>
+    <p>Extra Services</p>
+    <p>Sorry,Our Payment service for our extra services is currently not available,It'll be part of our update coming soon!</p>
+    <div id="labz">
+    </div>
+        <section>
+        <div id="labs">
+        <label><span>Trio Meal Deluxe (15,000):</span>
+    <input type="checkbox" value="15000"/>
+    </label>
+    <label><span>Double Meal Deluxe (10,000):</span>
+    <input type="checkbox" value="10000"/>
+    </label>
+    <label>
+        <span>Single Meal Deluxe (5,000):</span>
+        <input type="checkbox" value="5000"/>
+    </label>
+    <label>Wine:
+        <div id="wines"></div>
+  <button id="calculateBtn">Calculate Total</button>
+  <div id="total"></div>
+    </label>
+        </div>
+    </section>
+    <button id="btnn">Order</button>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="./dashboard.js"></script>
+</body>
+</html>

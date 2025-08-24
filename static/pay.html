@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src *; style-src *; frame-src *;">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="./pay.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="./hotell.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <h2>
+      Two Smile Hotel <i class="fa-solid fa-hotel"></i>
+      <br>
+      <aside><em>Exclusive access to a unique experience</em></aside>
+    </h2>
+  </header>
+
+  <section class="info">
+    <p>
+      Make secured payments to secure your room.<br>
+      Fill in and select required inputs.<br>
+      You are paying the selected room for <span id="paid">N/A</span><br>
+      Please select previous room as room type,unless won't get a response
+    </p>
+  </section>
+
+  <form id="payment_own" class="payment-form">
+    <div class="form-grid">
+      <label>
+        <i class="fa-solid fa-house"></i> Select Room Type:
+        <select id="room" required>
+          <option value="Royal Standard">Royal Standard N25,500</option>
+          <option value="Emperial Standard">Emperial Standard N30,000</option>
+          <option value="Platinum Suite">Platinum Suite N50,000</option>
+          <option value="Deluxe Suite">Deluxe Suite N40,000</option>
+          <option value="Conference Room">Conference Room N150,000</option>
+        </select>
+      </label>
+
+      <label>
+        <i class="fa-brands fa-slack"></i> Number of Rooms:
+        <select id="number_of_rooms" required>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </label>
+
+      <label>
+        <i class="fa-solid fa-credit-card"></i> Price:
+        <input type="text" id="price" disabled placeholder="Price will load automatically" />
+      </label>
+      <label>
+        <i class="fa-solid fa-envelope"></i> Email:
+        <input type="email" id="email" placeholder="Enter your email" required />
+      </label>
+    </div>
+
+    <div id="card_element_display"></div>
+    <button type="submit" class="btn-primary">Pay Now</button>
+  </form>
+
+  <footer>
+    <p>
+      Two Smile Hotel processes payments securely using Paystack. Please ensure your information is accurate for confirmations and communication.
+      Thank you for choosing us. Reach out for any support.
+    </p>
+  </footer>
+
+  <p id="time"></p>
+  <p class="loading" id="loading">2 Smile Hotel ...</p>
+  <p id="tag"></p>
+  <p id="roomErr"></p>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="./location.js"></script>
+    <script src="./pay.js"></script>
+</body>
+</html>

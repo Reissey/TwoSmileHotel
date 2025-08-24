@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <link rel="stylesheet" href="/booking.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="sawe">
+    <nav>
+        <ul>
+            <a href="./booking.html" target="_blank"><li>HOME</li></a>
+            <a target="_blank" ><li>ABOUT</li></a>
+            <a href="/login.html" target="_blank"><li>LOGIN</li></a>
+        </ul>
+    </nav>
+        <h3 id="head">Two Smile Hotel <br><aside><em>Exclusive access to a unique experience</em></aside></h3>
+    <p id="pp">With 2 Smiles, kindly answer our online receptionist to book a room</p><hr>
+    </div>
+    <div id="pol">
+    <form id="for" >
+        <span id="sey">Book Here</span>
+        <div id="form">
+            <section id="fir">
+                <label for="CustomerName"><span> <i class="fa-solid fa-user"></i> CustomerName:</span>
+                    <input type="text" id="CustomerName" name="CustomerName" placeholder="Enter name" required/>
+                </label>
+                <label for="email" id="emi"><span>Email:</span>
+                    <input type="email" id="email" placeholder="Enter Email" required>
+                </label>
+                <label for="type" id="ree"><span>Type of Room:</span>
+                    <select id="roomType" name="type" required>
+                        <option value="Royal Standard"> Royal Room N25,500</option>
+                        <option value="Emperial Standard"> Emperial Standard N30,000</option>
+                        <option value="Deluxe Suite">Deluxe Suite N40,000</option>
+                        <option value="Platinum Suite">Platinum Suite N50,000</option>
+                        <option value="Conference Room">Conference Room 150,000</option>
+                    </select>
+            </section>
+            <section id="sec">
+                <!--<label for="number_of_rooms_selected">Number of rooms:
+                    <input type="number" name="no_rooms" placeholder="Number of rooms" id="no_of_rooms" required/>
+                </label>-->              
+            <label for="check_in" id="chin"><span> <i class="fa-solid fa-calendar-days"></i> Check In:</span>
+            <input type="date" name="check_in" id="check_in" required/>
+        </label>
+        <label for="check_out" id="chon"><span> <i class="fa-solid fa-calendar-days"></i> Check Out:</span>
+            <input type="date" name="check_out" id="check_out" required/>
+        </label>
+        <label for="phone_number" id="phnn">
+            <span>Phone Number:</span>
+            <input type="text" id="numm" name="numm" placeholder="Enter Phone number" required/>
+        </label>
+        
+        <p id="setDate" style="display: none;">Set the right Date please</p>
+            </section>
+        </div>
+        <p id="take"></p>
+        <button type="submit" id="btn" disabled>Book Room</button>
+    </form>
+    <div id="pof">
+        <p><span id="big">Did you know?</span><br> Booking for a week earns you free breakfast for the week and also gives you a reward on your dashboard which you can redeem or save up.</p>
+        <button id='see'>See our rooms</button>
+    </div>
+    <div id="reth"></div>
+    <div id="loadingSpinner">
+        <div class="spinner"><p id="loading"></p></div>
+    </div>
+    </div>
+    <!-- Lightbox modal -->
+<div id="lightbox" class="lightbox">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="Large view">
+</div>
+    <script src="./booking.js">
+    </script>
+</body>
+</html>

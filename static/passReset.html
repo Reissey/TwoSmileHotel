@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Reset</title>
+    <link rel="stylesheet" href="./passReset.css"/>
+</head>
+<body>
+    <h2>Ballocoona Hotel <i class="fa-sharp fa-solid fa-hotel" style="width: 50%;"></i> <br> <aside><em>Take a rest</em></aside></h2>
+    <p>Add your email and new password to update password then go back to the login page.</p>
+    <form id="for4">
+<label>Password:
+    <input type="password" name="pass" id="pass" required placeholder="Enter new password"/>
+</label>
+<label id="emm">Email:
+    <input type="email" name="email" id="email" required placeholder="Enter email">
+</label>
+        <button id="submit" type="submit">Submit</button>
+    </form>
+    <p id="errMsg"></p>
+    <script>
+        
+document.getElementById('for4').addEventListener('submit',async (e)=>{
+    e.preventDefault()
+    const emailRe=document.getElementById('email').value;
+    const passwordRe=document.getElementById('pass').value;
+    try{
+        const data=await fetch('/reset-password',{
+            method:'post',
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({
+                email:emailRe,
+                pass:passwordRe
+            })
+        })
+        if(!data.ok){
+            return console.log('Data not okay')
+        }
+         res=await data.json();
+         window.location.href='./login.html'
+         const man=document.getElementById('errMsg');
+         if(res.msg){
+            man.textContent=res.msg;
+         }else{
+            man.textContent=res.Upmsg;
+         }
+    }catch(err){
+        console.error('Error in password reset',err.stack);
+        alert('Error in password reset',err);
+    }
+
+    const formD=document.getElementById('form');
+    formD.addEventListener('submit',(e)=>{
+        e.preventDefault();
+        getRegErr()
+    })
+})
+    </script>
+</body>
+</html>

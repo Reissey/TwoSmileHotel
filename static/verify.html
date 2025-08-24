@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verified Page</title>
+    <link rel="stylesheet" href="./verify.css"/>
+</head>
+<body>
+    <h3 id="head">Two Smile Hotel <br><aside><em>Exclusive access to a unique experience</em></aside></h3>
+    <p>Welcome,input password then select login method.</p>
+    <form id="form">
+            <input type="password" name="text" placeholder="Staffs only" id="text" autocomplete="new-password"/>
+            <select id="sell" >
+                <option value="sele">Select Below</option>
+                <option value="LogIn">Login</option>
+                <option value="Recognition">Voice Command</option>
+            </select>
+            <p id="pl"></p>
+            <button id="sub">Submit</button>
+    </form>
+    
+<div id="loadingSpinner">
+    <div class="spinner"></div>
+</div>
+    <footer>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla necessitatibus fuga provident, dolore expedita facere in corporis perspiciatis, accusantium magni aut quam at facilis eligendi ad sunt tenetur recusandae modi?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos dignissimos aspernatur, placeat, molestiae ab nesciunt, optio alias dolorem sit porro soluta praesentium ipsum! Quidem cumque recusandae, tempora laboriosam facere 
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis molestiae libero ex, obcaecati quasi dolores sint fugiat aliquid sunt mollitia blanditiis natus quos consequuntur praesentium impedit voluptas fuga delectus eum!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis molestiae libero ex, obcaecati quasi dolores sint fugiat aliquid sunt mollitia blanditiis natus quos consequuntur praesentium impedit voluptas fuga delectus eum!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis molestiae libero ex, obcaecati quasi dolores sint fugiat aliquid sunt mollitia blanditiis natus quos consequuntur praesentium impedit voluptas fuga delectus eum!
+    </footer>
+    
+    <!--
+       let showRoom=document.getElementById("showRoom");
+    let booked=document.getElementById('showBooked');
+    let avau=document.getElementById('showAvailable');
+    let roomList=document.getElementById('roomList');
+/*    
+    showRoom.addEventListener('click', showRooms)
+    booked.addEventListener('click', bookedRooms)
+    avau.addEventListener('click', availableRooms)
+*/
+    async function showRooms(){
+        const rooms=await fetch('/rooms');
+        const res=await rooms.json();
+        console.log(res)
+        displayRooms(res)
+    }
+    
+    async function availableRooms(){
+        const type=document.getElementById('roomType').value
+        const available= await fetch('/rooms/unbooked',{
+        method:'post',
+        headers:{
+        'Content-Type' : 'application/json'
+                 },
+        body:JSON.stringify({
+        type
+    })
+});
+if(!available.ok){
+    return console.log("Error in available rooms")
+}
+const data=await available.json();
+        console.log(data)
+        displayRooms(data)
+    }
+    
+    async function bookedRooms(){
+        const booked=await fetch('/rooms/booked');
+        const res=await booked.json();
+        console.log(res)
+        displayRooms(res)
+    }
+    
+    function displayRooms(rooms){
+    const createElem=document.createElement('ul');
+    roomList.innerHTML='';
+    rooms.forEach(room =>{
+        let createList=document.createElement("li");
+        createList.textContent=`${room.customer_name},${room.check_in},${room.check_out},${room.room_type}`
+        createElem.appendChild(createList)
+    })
+    roomList.appendChild(createElem);
+    }
+    
+    -->
+    <script src="./speech.js"></script>
+</body>
+</html>

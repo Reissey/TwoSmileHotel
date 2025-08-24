@@ -1,0 +1,814 @@
+/**
+h2{
+
+}
+#flex{
+    display: grid;
+    grid-template-columns: repeat(2,600px);
+    grid-template-rows: repeat(2,100px);
+    gap: 5px;
+    text-align: center;
+}
+#hed{
+    background: url(./emp2.JPG);
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+label{
+    padding-top: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+span{
+margin-left: 30px;
+}
+select{
+    margin-top: 5px;
+}
+input{
+    padding: 7px;
+}
+h2{
+text-align: center;
+font-size: 35px;
+font-family: "Inter",sans-serif;
+}
+aside{
+    font-size: 10px;
+    color: red;
+    
+}
+#paynow{
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    margin-top: 30px;
+    margin-left: 430px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-size: 15px;
+    width: 30%;
+}
+button:hover{
+color: gold;
+background-color: black;
+}
+
+#room{
+    margin-left: -40px;
+    padding-right: 120px;
+    padding-top: 6px;
+    padding-bottom:3px;
+    padding-left: 6px;
+    width: 33%;
+}
+
+#number_of_rooms{ 
+    margin-left:13px;
+    padding-top: 4px;
+    padding-left: 5px;
+    padding-bottom: 4px;
+    padding-right:1px;
+    width: 33%;
+}
+
+#pol{
+    padding-right: 135px; 
+
+}
+#pricee{
+    padding-right: 50px;
+}
+#price{
+    padding-right: 20px;
+    margin-top: 2px;
+    margin-left: 3px;
+}
+#ema{
+ padding-right: 120px;   
+}
+#card{
+    position: relative;
+    right: -33px;
+
+}
+#sel{
+    padding-right: 50px;
+}
+#nom{
+    padding-right: 5px;
+}
+footer{
+    width: 80%;
+    text-align: center;
+    margin-left: 100px;
+    margin-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 10px;
+}
+#emi{
+    position: relative;
+    right: -27px;
+}
+#emaill{
+    margin-left: 29px;
+}
+@media screen and (width:1440px) {
+    body{
+        box-sizing: border-box;
+        text-align: center;
+    }
+    #flex{
+        display: grid;
+        grid-template-columns: repeat(2,250px);
+    }
+    #sel{
+        font-size: small;
+        margin-left: 19px;
+    }
+    #room{
+        width: 40%;    
+    }
+    #roo{
+        margin-top: -2px;
+    }
+    #nom{
+        font-size: small;
+        margin-left: 19px;
+    }
+    #number_of_rooms{
+        width: 55%;
+        padding-bottom: 4px;
+    }
+    #pol{
+        font-size: small;
+        margin-right: -35px;
+    }
+    #price{
+        width: 70%;
+        padding-top: 5px;
+        padding-bottom: 3px;
+        padding-left: 3px;
+        padding-right: 3px;
+        margin-left: 25px;
+    }
+    #ema{
+        font-size: small;
+        margin-top: 10px;
+
+    }
+    #email{
+        width: 61%;
+        padding-top: 5px;
+        padding-bottom: 3px;
+        padding-left: 3px;
+        padding-right: 3px;
+        margin-top: 5px;
+        margin-right: 10px;
+    }
+    #emaill{
+        margin-top: -2.5px;
+    }
+    button{
+        margin-left: -960px;
+        width: 15%;
+        border-radius: 30px;
+    }
+    footer{
+        width: 20%;
+    }
+    h2{
+        margin-left: -68%;
+    }
+    p{
+        margin-left: -67%;
+        font-size: 10px;
+    }
+}
+@media screen and (width:1024px) {
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    h2{
+        margin-left: -60%;
+    }    
+    p{
+        font-size: 10px;
+    }
+    #flex{
+        display: grid;
+        grid-template-columns: repeat(2,220px);       
+    }
+    #sel{
+        font-size: small;
+        margin-left: 20px;
+    }
+    #room{
+        padding: 3px;
+        width: 48%;
+    }
+    #roo{
+        margin-left: -40px;
+    }
+    #nom{
+        font-size: 12px;
+        margin-left: 28px;
+    }
+    #nolo{
+        margin-top: -1px;
+        margin-right: 70px;
+    }
+    #number_of_rooms{
+        width: 85%;
+    }
+    #pol{
+        font-size: small;
+        margin-left: 18px;
+    }
+    #price{
+        padding: 4px;
+        width: 80%;
+        margin-left: -15px;
+    }
+    #card{
+        position: relative;
+        top: 28px;
+        right: 75px;
+    }
+    #pricee{
+        margin-top: -27px;
+    }
+    #ema{
+        font-size: small;
+        margin-left: 24px;
+    }
+    #email{
+        padding: 4px;
+        width: 50%;
+        margin-right: 29px;
+    }
+    #emaill{
+        margin-left: -25px;
+        margin-top: 0px;
+    }
+    button{
+        margin-left: 79px;
+        width: 20%;
+        border-radius: 40px;
+    }
+    footer{
+        width: 20%;
+        margin-left: 80px;
+    }
+    #emi{
+        position: relative;
+        left: 23px;
+    }
+}
+@media screen and (width:768px){
+    body{
+        max-width: 500px;
+    }
+    h2{
+        margin-left: -270px;
+        font-size: 15px;
+    }
+    aside{
+        font-size: 12px;
+        letter-spacing: 4px;
+        word-spacing: 3px;
+    }
+    p{
+        width: 45%;
+        font-size: 9px;
+    }
+    #flex{
+        display: grid;
+        grid-template-columns: repeat(2,230px);
+    }
+    #sel{
+        font-size: 10px;
+        margin-left: 38px;
+    }
+    #room{
+        margin-right: -15px;
+        width: 33%;
+        padding:2px;
+        position: relative;
+        top: -7px;
+    }
+    #roo{
+        margin-left: -90px;
+    }
+    #nom{
+        font-size: 10px;
+    }
+    #nolo{
+        margin-bottom: 20px;
+        margin-left: -250px;
+    }
+    #number_of_rooms{
+        width: 22%;
+        position: relative;
+        top: -7px;
+        padding: 2px;
+    }
+    #pol{
+        font-size: 12px;
+        margin-right: -110px;
+    }
+    #price{
+        padding: 2px;
+        width: 62%;
+        margin-left: -75px;
+        position: relative;
+        top: -9px;
+    }
+    #ema{
+        font-size: 12px;
+        margin-left: -62px;
+    }
+    #email{
+        padding: 2px;
+        margin-left: -260px;
+        width: 55%;
+        position: relative;
+        top: -9px;
+    }
+    button{
+        width: 35%;
+        margin-left: 50px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 3px;
+        padding-right: 3px;
+        font-size: small;
+    }
+    footer{
+        width: 70%;
+        margin-left: -50px;
+        font-size: 5px;
+    }
+}
+@media screen and (width:320px){
+    body{
+        max-width: 280px;
+    }
+    #flex{
+        display: grid;
+        grid-template-columns: repeat(2,230px); 
+    }
+    span{
+        font-size: 13px;
+    }
+    #room{
+        margin-top: 5.5px;
+        padding-left: 15px;
+    }
+    #sel{
+        margin-left: 10px;
+    }
+    #number_of_rooms{
+        width: 55%;
+        margin-left: 15px;
+        margin-top: 2px;
+    }
+    #price{
+        width: 64%;
+    }
+    #card{
+        position: relative;
+        top: 28px;
+        left: -60px;
+    }
+    #pol{
+        position: relative;
+        left: 10px;
+    }
+    #email{
+        width: 70%;
+    }
+    #emi{
+        position: relative;
+        top: 26px;
+        right: 67px;
+    }
+    #ema{
+        position: relative;
+        left: 8px;
+    }
+    button{
+        position: relative;
+        left: -280px;
+        width: 60%;
+    }
+    footer{
+        width: 70%;
+        margin-left: 130px;
+    }
+}
+.loadd{
+    display: none;
+}
+#map{
+    height: 200px;
+    width: 50%;
+    text-align: center;
+    margin-left: 30%;
+    display: block;
+}
+#show{
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    margin-top: 30px;
+    margin-left: 430px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-size: 15px;
+    width: 30%;
+}
+#Stop{
+    display: none;
+    cursor: pointer;
+    border: none;
+    color: brown;
+    position: absolute;
+    bottom: 7%;
+    left: 80%;
+}
+#spin{
+    display:block;
+}
+#map{
+    width: 700px;
+    height: 500px;
+    position: relative;
+    right: 100px;
+}
+#Cont{
+    cursor: pointer;
+    border: none;
+    color: brown;
+    position: absolute;
+    bottom: 5%;
+    left: 80%;
+}
+#transport{
+    padding-left: 10px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 40px;
+    border-radius: 5px;
+    border: 2px solid black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom:60px;
+}
+select > option {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 5px;
+    padding: 20%;
+}
+#display_data{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 5px;
+    font-size: 8px;
+}
+#reaf{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight:20px;
+    padding-left: 20px;
+    padding-left: 38px;
+    position: relative;
+    bottom: 15px;
+}
+.emd{
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+}
+#paid{
+    position: relative;
+    right: 27px;
+    color: red;
+}
+p{
+    font-family: "Inter",sans-serif;
+}
+#heaf{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    padding-left: 40px;
+}
+#hotel{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:35px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+#Stop:active{
+    animation: reiss 3000ms  1500ms infinite ;
+}
+#display_data{
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    font-weight: bolder;
+    font-size: 15px;
+}
+@keyframes reiss {
+    0%{
+        padding: 4px;
+        color: red;
+    }
+    10%{
+        color: black;
+        background-color: brown;
+    }
+    20%{
+        color: aqua;
+        margin-left: 30px;
+    }
+
+}
+        #paragraph {
+            font-size: 16px; 
+            line-height:-2; 
+            position: relative;
+            top: 7%;
+            display: none;
+        }
+
+        .loading {
+            font-size: 60px;
+            position: absolute;
+            bottom: 180px;
+            left: 390px;
+            font-weight: bold;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            letter-spacing: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            color: rgb(52, 152, 219); 
+            animation: slideOut 4s infinite 2s, colorChange 4s infinite, revealText 4s infinite 2s;
+          }
+          #loading{
+            display: none;
+          }
+          
+          @keyframes slideOut {
+            0% {
+              clip-path: inset(0 100% 0 0); 
+              opacity: 0;
+            }
+            50% {
+              clip-path: inset(0 0 0 0); 
+              opacity: 1; 
+            }
+            100% {
+              clip-path: inset(0 100% 0 0); 
+              opacity: 0;
+            }
+          }
+          
+          @keyframes colorChange {
+            0% {
+              color:red;
+            }
+            25% {
+              color: black; 
+            }
+            50% {
+              color: beige; 
+            }
+            75% {
+              color:thistle;
+            }
+            100% {
+              color:burlywood;
+            }
+          }
+          
+          @keyframes revealText {
+            0% {
+              opacity: 0; 
+            }
+            25% {
+              opacity: 0.25;
+            }
+            50% {
+              opacity: 0.5; 
+            }
+            75% {
+              opacity: 0.75;             }
+            100% {
+              opacity: 1; 
+            }
+          }
+
+@media screen and (width:425px) and (width:375px) {
+    span{
+        font-size: 12px;
+    }
+    h2{
+        color: aqua;
+    }
+}
+/
+
+
+/* ===== General Reset & Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+aside {
+  font-size: 0.9rem;
+  color: #f1c40f;
+  display: block;
+  margin-top: 5px;
+}
+
+header.hero {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: black;
+  opacity: 0.6;
+}
+
+/* ===== Info Section ===== */
+.info {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1rem;
+}
+
+#paid {
+  color: red;
+  font-weight: bold;
+}
+
+/* ===== Form Section ===== */
+.payment-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+label i {
+  margin-bottom: 5px;
+  color: #3498db;
+}
+
+select, input[type="email"], input[type="text"] {
+  padding: 10px;
+  font-size: 1rem;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* ===== Button ===== */
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 30px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #2c3e50;
+  color: #f1c40f;
+}
+
+/* ===== Footer ===== */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* ===== Loading Text Animation ===== */
+.loading {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  color: #3498db;
+  display: none;
+  animation: slideOut 4s infinite 2s, colorChange 4s infinite, revealText 4s infinite 2s;
+}
+
+@keyframes slideOut {
+  0% { clip-path: inset(0 100% 0 0); opacity: 0; }
+  50% { clip-path: inset(0 0 0 0); opacity: 1; }
+  100% { clip-path: inset(0 100% 0 0); opacity: 0; }
+}
+
+@keyframes colorChange {
+  0% { color: red; }
+  25% { color: black; }
+  50% { color: beige; }
+  75% { color: thistle; }
+  100% { color: burlywood; }
+}
+
+@keyframes revealText {
+  0% { opacity: 0; }
+  25% { opacity: 0.25; }
+  50% { opacity: 0.5; }
+  75% { opacity: 0.75; }
+  100% { opacity: 1; }
+}
+
+/* ===== Responsive Typography ===== */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .payment-form {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  aside {
+    font-size: 0.8rem;
+  }
+
+  .info {
+    font-size: 0.9rem;
+  }
+
+  .loading {
+    font-size: 1.5rem;
+  }
+}
+#map{
+    width:500px;
+    height: 250px;
+}

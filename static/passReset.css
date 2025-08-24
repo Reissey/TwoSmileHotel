@@ -1,0 +1,66 @@
+
+h2{
+    text-align: center;
+    word-spacing: 10px;
+    letter-spacing: 1px;
+    }
+    aside{
+        font-size: 18px;
+        color: red;
+        letter-spacing:7px;
+        word-spacing: 3px;
+    }
+    #for4{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 70px;
+    }
+    label{
+        padding-bottom: 20px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+        font-weight: bold;
+    }
+    input{
+        border-left: none;
+        border-top: none;
+        border-right:none ;
+        border-bottom: 1px solid black;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+    }
+    #emm{
+        margin-left: 23px;
+    }
+    button{
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+        border-radius: 20px;
+        cursor: pointer;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    button:hover{
+        color: white;
+        background-color: black;
+    }
+    button:active{
+        color: white;
+        background-color: black;
+    }
+    p{
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    footer{
+        font-size: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        width: 80%;
+        margin-left: 100px;
+        margin-top: 20px;
+    }

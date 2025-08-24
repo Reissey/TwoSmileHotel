@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./table.css"/>
+<!--  <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>-->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div>
+    <h2>Two Smile Hotel <br> <aside><em>Exclusive access to a unique experience</em></aside></h2>
+    <h3 id="RDd">Room Data</h3>
+</div>
+<div id="home">
+    <section id="tab1">
+        <table>
+            <h3 id="all">All Hotel Rooms</h3>
+            <thead>
+                <tr>
+                    <th id="nami">Customer Name</th>
+                    <th id="cusName">Customer_ID</th>
+                    <th id="tip">Room Type</th>
+                    <th id="ron">Room Number</th>
+                    <th id="ava">Available</th>
+                </tr>
+                <tbody id="allRooms">
+                </tbody>
+            </thead>
+        </table>
+        <button id="next2">Next row</button>
+        <button id="prev2">Previous row</button>
+        </section>
+
+            <section id="tab2">
+                <table>
+                <h3 id="booked_">Booked Rooms</h3>
+            <thead>
+                <tr>
+                    <th id="nami">Customer Name</th>
+                    <th id="cus">Customer ID</th>
+                    <th id="type">room Type</th>
+                    <th id="num">room Number</th>
+                    <th id="stat">Available</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+        <button id="next">Next row</button>
+        <button id="prev">Previous row</button>
+        </section>
+            <section id="tab3">
+                <table>
+                    <h3 id="avr">Available rooms</h3>
+                    <thead>
+                        <tr>
+                            <th id="nami">Customer Name</th>
+                            <th id="cusName">Customer_ID</th>
+                            <th id="tip">Room Type</th>
+                            <th id="ron">Room Number</th>
+                            <th id="ava">Available</th>
+                        </tr>
+                    </thead>
+                    <tbody id="availableRooms"></tbody>
+                </table>
+                <button id="next4">Next row</button>
+                <button id="prev4">Previous row</button>
+            </section>
+</div>
+<div id="chart" style="width: 400px;height: 300px;"></div>
+<p id="for">Search for user below</p>
+<form id="sach">
+    <label>Email:
+        <input type="email" placeholder="Email" id="Eemail" />
+    </label>
+    <label>Phone Number:
+        <input type="tel" id="phony" name="phony" placeholder="Phone Number"/>
+    </label>
+    <button id="checkBtn">Check</button>
+</form>
+<div id="dis"></div>
+<!--Learn how to use the search box and the get method-->
+<canvas id="sales" width="1000" height="400"></canvas>
+<p id="lgt">Logout</p>
+<div id="gj">
+    <select id="choice">
+        <option value="s">Select Logout Method</option>
+        <option value="voice">Voice Command</option>
+        <option value="logout">Logout</option>
+    </select>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./table.js"></script>
+</body>
+</html>
+<!--Use rooms to fetch chart data... Everything's gon' be okay Tee,I promise.Not by our power but by God's power and utmost might.-->
