@@ -70,6 +70,14 @@ app.use(express.json())
 app.get('/',async (req,res)=>{
     res.sendFile(path.join(__dirname,'static','Register.html'));
 })
+app.use((req, res, next) => {
+    if (req.path.endsWith('.html')) {
+        const newPath = req.path.slice(0, -5); // Remove ".html"
+        return res.redirect(301, newPath);
+    }
+    next();
+});
+
 
 function checkAuth(req, res, next) { if (req.session && req.session.user) { next();} 
 else { res.redirect('/verify.html');
@@ -971,3 +979,4 @@ app.listen(port,(err)=>{
 }).on('error',()=>{
     process.exit(1)
 });
+
