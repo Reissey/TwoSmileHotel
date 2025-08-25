@@ -65,7 +65,7 @@ form3.addEventListener('submit', async (e) => {
 console.log(DaysToSpend);
     let amountKobo = parseInt(amount.value) * 100;
     
-    const response = await fetch('https://02aecef80acc.ngrok-free.app/payments',{
+    const response = await fetch('https://twosmilehotel.onrender.com/payments',{
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -187,4 +187,5 @@ const callBook=async()=>{
       </div>
 <p id="tag"></p>
 <p id="roomErr"></p>
+
  */
