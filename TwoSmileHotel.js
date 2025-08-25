@@ -89,19 +89,20 @@ async function createTable(){
     try{
         await pool.connect()
         await pool.query('begin');
-        let tab=`create table if not exists TwoSmileHotelUsers(
+        let tab=`create table if not exists twosmilehotelusers(
         id serial primary key,
-        Firstname varchar(50) unique not null,
-        Lastname varchar(50) unique not null,
-        Passowrd varchar(60) unique not null,
+        firstname varchar(50) ,
+        lastname varchar(50) ,
+        passowrd varchar(60) ,
         email varchar(50) unique not null,
         tel varchar(40) unique not null,
+        days integer,
         created_at timestamp default current_timestamp
         )`
         let rooms=`
-        create table if not exists TwoSmilerooms(
+        create table if not exists twosmilerooms(
         id serial primary key,
-        Customer_Name varchar(50),
+        customer_name varchar(50),
         room_type varchar(50),
         room_number integer unique not null,
         days integer,
@@ -112,9 +113,9 @@ async function createTable(){
         )
         `
         let bookings=`
-        create table if not exists TwoSmilebookings(
+        create table if not exists twosmilebookings(
         id serial primary key,
-        customer_Name varchar(50),
+        customer_name varchar(50),
         type varchar(50),
         price integer,
         check_in date,
@@ -236,7 +237,7 @@ insertTable()
     try{
         const {firstname,password,lastname,email} = req.body;
         let check={
-            text:"select * from twosmilehotelUsers where email=$1",
+            text:"select * from twosmilehotelusers where email=$1",
             value:[email]
         }
         const {text,value} = check;
@@ -279,7 +280,7 @@ insertTable()
     try {
         const {email,pass} = req.body;
         const dar={
-            text:`select id from twosmilehotelUsers where email=$1`,
+            text:`select id from twosmilehotelusers where email=$1`,
             val:[email]
         }
         const {text,val}=dar;
@@ -292,7 +293,7 @@ insertTable()
       //  const expiryDate=new Date(Date.now() + 60 * 60 * 1000);
         const hashh=await bcrypt.hash(pass,10);
         const uppy={
-            tre:'update twosmilehotelUsers set passowrd=$1 where id=$2',
+            tre:'update twosmilehotelusers set passowrd=$1 where id=$2',
             trev:[hashh,trw]
         }
         const {tre,trev}= uppy;
@@ -380,7 +381,7 @@ app.post('/register',async (req,res)=>{
         const {firstname,passowrd,lastname,email,tel} = req.body;
         console.log(passowrd,email,lastname,tel)
         const check={
-            teer:'select * from twosmilehotelUsers where email=$1 or tel=$2',
+            teer:'select * from twosmilehotelusers where email=$1 or tel=$2',
             teev:[email,tel]
         }
         const {teer,teev} = check;
@@ -391,7 +392,7 @@ app.post('/register',async (req,res)=>{
         }
         let hashed=await bcrypt.hash(passowrd,10); 
         let insert={
-        text:'insert into twosmilehotelUsers(Firstname,Lastname,passowrd,email,tel) values($1,$2,$3,$4,$5)',
+        text:'insert into twosmilehotelusers(firstname,lastname,passowrd,email,tel) values($1,$2,$3,$4,$5)',
         value:[firstname,lastname,hashed,email,tel]
     }
 /* Registration info stored to be used in other parts of the code */
@@ -488,8 +489,8 @@ cron.schedule('0 * * * *', async () => {
     try {
         await pool.query(`
             DELETE FROM twosmilereceipt
-            WHERE paidat IS NOT NULL
-              AND paidat < NOW() - INTERVAL '24 hours'
+            WHERE paidAt IS NOT NULL
+              AND paidAt < NOW() - INTERVAL '24 hours'
         `);
         console.log('✅ Old receipts deleted');
     } catch (err) {
@@ -983,6 +984,7 @@ app.listen(port,(err)=>{
 }).on('error',()=>{
     process.exit(1)
 });
+
 
 
 
