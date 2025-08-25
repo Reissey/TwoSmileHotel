@@ -229,7 +229,6 @@ let fixRoomCOn=async()=>{
     await pool.query('insert into twosmilerooms(room_type,room_number,available) values($1,$2,$3)',['Conference Room',20,true]);
 }
 fixRoomCOn()
-fixEmpDel()
 fixRoyal();
 insertTable()
 
@@ -984,5 +983,6 @@ app.listen(port,(err)=>{
 }).on('error',()=>{
     process.exit(1)
 });
+
 
 
