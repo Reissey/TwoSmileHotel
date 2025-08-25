@@ -54,25 +54,24 @@ app.use((req, res, next) => {
     next();
 });
 
-let pool= new Pool({
-    host:process.env.DB_HOST,
-    database:process.env.DB_NAME,
-    user:process.env.DB_USER,
-    password:process.env.DB_PASS,
-    port:process.env.DB_PORT || '5432',
-    ssl: {
-        rejectUnauthorized: false
-    }
-})
+
+const pool = new Pool({
+  connectionString: process.env.DB_HOST,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+});
+
 console.log('Along the line', process.env.DB_PASS,process.env.DB_USER,process.env.PAYPAL_SECRET_KEY,process.env.DB_PORT);
 
 app.use(express.json())
 app.get('/',async (req,res)=>{
     res.sendFile(path.join(__dirname,'static','Register.html'));
 })
+
 app.use((req, res, next) => {
     if (req.path.endsWith('.html')) {
-        const newPath = req.path.slice(0, -5); // Remove ".html"
+        const newPath = req.path.slice(0, -5);
         return res.redirect(301, newPath);
     }
     next();
@@ -96,7 +95,7 @@ async function createTable(){
         Lastname varchar(50) unique not null,
         Passowrd varchar(60) unique not null,
         email varchar(50) unique not null,
-        tel numeric unique not null,
+        tel varchar(40) unique not null,
         created_at timestamp default current_timestamp
         )`
         let rooms=`
@@ -105,6 +104,10 @@ async function createTable(){
         Customer_Name varchar(50),
         room_type varchar(50),
         room_number integer unique not null,
+        days integer,
+        email varchar(50),
+        phone_numbers varchar(60),
+        extras varchar(50),
         available boolean default false
         )
         `
@@ -113,15 +116,17 @@ async function createTable(){
         id serial primary key,
         customer_Name varchar(50),
         type varchar(50),
-        price decimal,
+        price integer,
         check_in date,
         check_out date,
         no_of_rooms integer,
         payment_status varchar(50),
         email varchar(50),
-        countdown numeric,
+        phone_numbers varchar(50),
         extras varchar(60),
-        days integer
+        days integer,
+        points integer,
+        last_updated timestamp without time zone,
         )
         `
         let receipt=`
@@ -129,9 +134,9 @@ async function createTable(){
         id serial primary key,
         name varchar(60),
         email varchar(60),
-        amount numeric,
+        amount varchar(30),
         currency varchar(40),
-        paidAt numeric,
+        paidAt timestamp without time zone,
         status varchar(50),
         ref varchar(80),
         bank varchar(50),
@@ -139,9 +144,9 @@ async function createTable(){
         channel varchar(50) 
         )
         `
-        //await pool.query(receipt);
-        //await pool.query(tab)
-        //await pool.query(rooms)
+        await pool.query(receipt);
+        await pool.query(tab)
+        await pool.query(rooms)
         await pool.query(bookings)
         await pool.query('commit')
         console.log('Table created')
@@ -195,7 +200,7 @@ let fixEps=async()=>{
         console.error("Error in eps: ",error);
     }
 }
-//fixEps();
+fixEps();
 
 let fixEStandard=async()=>{
     try {
@@ -207,7 +212,7 @@ let fixEStandard=async()=>{
         console.error("Error in standard rooms ",error)
     }
 }
-  //  fixEStandard()
+    fixEStandard()
 
 let fixRoyal=async()=>{
     try {
@@ -223,10 +228,10 @@ let fixRoyal=async()=>{
 let fixRoomCOn=async()=>{
     await pool.query('insert into twosmilerooms(room_type,room_number,available) values($1,$2,$3)',['Conference Room',20,true]);
 }
-//fixRoomCOn()
-//fixEmpDel()
-//fixRoyal();
-//insertTable()
+fixRoomCOn()
+fixEmpDel()
+fixRoyal();
+insertTable()
 
  app.post('/login',async (req,res)=>{
     try{
@@ -979,4 +984,5 @@ app.listen(port,(err)=>{
 }).on('error',()=>{
     process.exit(1)
 });
+
 
