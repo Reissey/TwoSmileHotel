@@ -62,8 +62,6 @@ const pool = new Pool({
   },
 });
 
-console.log('Along the line', process.env.DB_PASS,process.env.DB_USER,process.env.PAYPAL_SECRET_KEY,process.env.DB_PORT);
-
 app.use(express.json())
 app.get('/',async (req,res)=>{
     res.sendFile(path.join(__dirname,'static','Register.html'));
@@ -76,14 +74,13 @@ app.use((req, res, next) => {
     }
     next();
 });
+    
+app.get('/:page', (req, res) => {
+    const page = req.params.page;
+    res.sendFile(path.join(__dirname, 'static', `${page}.html`));
+});
 
-
-function checkAuth(req, res, next) { if (req.session && req.session.user) { next();} 
-else { res.redirect('/verify.html');
-    }
-     }
-
-    app.get('/table.html', checkAuth, (req, res) => { res.sendFile(path.join(__dirname, 'public', 'table.html')); });
+app.use(express.static(path.join(__dirname, 'static')));
 
 async function createTable(){
     try{
@@ -981,6 +978,7 @@ app.listen(port,(err)=>{
 }).on('error',()=>{
     process.exit(1)
 });
+
 
 
 
