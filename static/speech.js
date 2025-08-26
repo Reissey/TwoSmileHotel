@@ -1,77 +1,64 @@
-
 const showSpinner=()=>{
     document.getElementById('loadingSpinner').style.display='block'
 }
+
 const hideSpinner=()=>{
     document.getElementById('loadingSpinner').style.display='none'
 }
 
-let call=()=>{    
-const recognize= new webkitSpeechRecognition()
-recognize.continuous=true;
-recognize.interimResults=true;
-recognize.lang='en-US';
-recognize.onstart=()=>{
-    console.log('Speech recognition started')
-}
+let recognize;
 
-recognize.onend=()=>{
-    console.log('Speech recogniton ended');
-    stop();
-}
+const initRecognition = () => {
+  recognize = new webkitSpeechRecognition();
+  recognize.continuous = false;
+  recognize.interimResults = false;
+  recognize.lang = 'en-US';
 
-recognize.onerror=(event)=>{
-    console.error(`Error in speech recognition ${event.error}`);
-}
-recognize.onspeechend=()=>{
-    console.log('Speech ended')
-    stop();
-}
-let trans = '';
-
-const checkWords = (trans) => {
-    const keywords = ['open', 'proceed'];
-    const changed = trans.toLowerCase();
-    keywords.forEach(keyword => {
-        if (changed.includes(keyword)) {
-            theFunc(keyword);
-        }
-    });
-};
-
-const theFunc = (keyword) => {   
-    switch (keyword) {
-        case 'open':
-            console.log('working 1...');
-            window.location.href = 'table.html';
-            break;
-        case 'proceed':
-            console.log('working 2...');
-            window.location.href = 'table.html';
-            break;
-        default:
-            return;
+  recognize.onstart = () => console.log('Speech recognition started');
+  recognize.onend = () => {
+    console.log('Speech recognition ended');
+  };
+  recognize.onerror = (event) => {
+    console.error(`Speech recognition error: ${event.error}`);
+  };
+  recognize.onresult = (event) => {
+    const transcript = event.results[0][0].transcript.toLowerCase();
+    console.log('Heard:', transcript);
+    if (transcript.includes('open') || transcript.includes('proceed')) {
+      window.location.href = 'table.html';
+    } else {
+      alert('Voice command not recognized. Please say "open" or "proceed".');
     }
+  };
 };
 
-recognize.onresult = (event) => {
-    trans = Array.from(event.results)
-        .map(result => result[0].transcript)
-        .join(' ');
-    checkWords(trans);
-    console.log('Heard', trans);
-};
+initRecognition();
 
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-const start = () => {
-    recognize.start();
-};
-const stop = () => {
-    recognize.stop();
-};
+  const role = text.value.trim().toLowerCase();
+  const method = document.getElementById('sell').value;
 
-start()
-}
+  if (role === 'manager' || role === 'receptionist') {
+    if (method === 'Recognition') {
+      recognize.start();
+    } else if (method === 'LogIn') {
+      showSpinner();
+      window.location.href = 'table.html';
+    } else {
+      alert('Please select a login method');
+    }
+  } else {
+    const pl = document.getElementById('pl');
+    pl.textContent = 'Wrong Password';
+    setTimeout(() => {
+      pl.textContent = '';
+      submitBtn.disabled = true;
+    }, 5000);
+  }
+});
+
 //document.getElementById('sell').style.display='none'
 const text=document.getElementById('text')
 const submitBtn=document.getElementById('sub');
