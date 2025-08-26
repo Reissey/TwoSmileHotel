@@ -157,10 +157,9 @@ async function createTable(){
     }
 }
 
-createTable()
+//createTable()
 async function insertTable() {
     try{
-    await pool.query("begin")
     const roomtypes=['Moderate'];
     let roomtype=''
 
@@ -180,8 +179,6 @@ async function insertTable() {
     const {text,value} = insert;
     await pool.query(text,value);
     }
-
-    await pool.query('commit');
     //await pool.query('select setval(rooms_id_seq,1,true)')
     console.log("It actually loaded")
     }catch(error){
@@ -984,6 +981,7 @@ app.listen(port,(err)=>{
 }).on('error',()=>{
     process.exit(1)
 });
+
 
 
 
