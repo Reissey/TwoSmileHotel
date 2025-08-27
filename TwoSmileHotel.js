@@ -74,11 +74,6 @@ app.use((req, res, next) => {
     }
     next();
 });
-    
-app.get('/:page', (req, res) => {
-    const page = req.params.page;
-    res.sendFile(path.join(__dirname, 'static', `${page}.html`));
-});
 
 async function createTable(){
     try{
@@ -977,6 +972,7 @@ app.listen(port,(err)=>{
 }).on('error',()=>{
     process.exit(1)
 });
+
 
 
 
