@@ -27,7 +27,7 @@ form3.addEventListener('submit', async (e) => {
     let con=153100;
     
     console.log(DaysToSpend);
-    
+    console.log(email);
     let ert=await fetch(`/regt?email=${email}`);
     if(!ert.ok){
      return console.error(`Error in regt endpoint...${ert.statusText}_${ert.status}`);
@@ -189,3 +189,4 @@ const callBook=async()=>{
 <p id="roomErr"></p>
 
  */
+
