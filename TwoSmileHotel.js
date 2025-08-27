@@ -195,7 +195,7 @@ let fixEps=async()=>{
         console.error("Error in eps: ",error);
     }
 }
-fixEps();
+//fixEps();
 
 let fixEStandard=async()=>{
     try {
@@ -207,7 +207,7 @@ let fixEStandard=async()=>{
         console.error("Error in standard rooms ",error)
     }
 }
-    fixEStandard()
+  //  fixEStandard()
 
 let fixRoyal=async()=>{
     try {
@@ -223,9 +223,9 @@ let fixRoyal=async()=>{
 let fixRoomCOn=async()=>{
     await pool.query('insert into twosmilerooms(room_type,room_number,available) values($1,$2,$3)',['Conference Room',20,true]);
 }
-fixRoomCOn()
-fixRoyal();
-insertTable()
+//fixRoomCOn()
+//fixRoyal();
+//insertTable()
 
  app.post('/login',async (req,res)=>{
     try{
@@ -978,6 +978,7 @@ app.listen(port,(err)=>{
 }).on('error',()=>{
     process.exit(1)
 });
+
 
 
 
