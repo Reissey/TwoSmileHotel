@@ -80,8 +80,6 @@ app.get('/:page', (req, res) => {
     res.sendFile(path.join(__dirname, 'static', `${page}.html`));
 });
 
-app.use(express.static(path.join(__dirname, 'static')));
-
 async function createTable(){
     try{
         await pool.connect()
@@ -971,13 +969,15 @@ ORDER BY weekday;
       res.status(500).json({ error: 'Internal server error' });
     }
   });
-let port=3000;
 
+app.use(express.static(path.join(__dirname, 'static')));
+let port=3000;
 app.listen(port,(err)=>{ 
     console.error(err)
 }).on('error',()=>{
     process.exit(1)
 });
+
 
 
 
