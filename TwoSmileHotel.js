@@ -733,7 +733,6 @@ const {tet,val} = update;
 await pool.query(tet,val);
 console.log('Effort paid');
 }
-const paymentData=cache.get(reference)
 const cachedBook=cache.get(`bookingData${paymentData.email}`);
 const loyaltyResult = await updateLoyaltyPoints(cachedBook.phone_number, 1);
 if (loyaltyResult.reward) {
@@ -972,6 +971,7 @@ app.listen(port,(err)=>{
 }).on('error',()=>{
     process.exit(1)
 });
+
 
 
 
